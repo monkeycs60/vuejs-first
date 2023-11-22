@@ -11,6 +11,15 @@ export default {
     name: "NotFoundPage",
 }
 </script>
-<style>
+<style lang="scss">
+div {
+    background-color: red;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
 
+    span {
+        color: black;
+    }
+}
 </style>
