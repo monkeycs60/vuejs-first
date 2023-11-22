@@ -25,10 +25,10 @@
 			</div>
 		</div>
 
-		<form-card @submit-user="handleUserSubmit"></form-card>
+		<form-card @submit-user="handleUserSubmit" :finalUser="finalUser"></form-card>
 
 
-		<p>Final user est : {{ finalUser }} </p>
+		<p v-if="finalUserExists">Final user est : {{ finalUser }} </p>
 
 		<car-card v-for="car in carArray" :key="car.id" :car="car" @increment="incrementCounter"
 			@decrement="decrementCounter"></car-card>
@@ -57,7 +57,11 @@ export default {
 			},
 			stocksInStock: null,
 			selectedVariant: "green",
-			finalUser: null,
+			finalUser: {
+				firstname: "jerome",
+				lastname: "",
+				age: null,
+			},
 			counter: 0,
 			carArray: [
 				{
@@ -87,6 +91,9 @@ export default {
 		},
 		howManySocksLeft() {
 			return this.socksVariant[this.selectedVariant].quantity;
+		},
+		finalUserExists() {
+			return this.finalUser.firstname && this.finalUser.lastname && this.finalUser.age;
 		},
 	},
 	methods: {
