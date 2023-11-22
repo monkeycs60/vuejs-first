@@ -13,6 +13,10 @@
 				<li>
 					<router-link to="/contact">Contact</router-link>
 				</li>
+				<li>
+					<input v-model="name" type="text" placeholder="nom d'utilisateur" />
+					<button @click="handleClick">Go to contact</button>
+				</li>
 			</ul>
 		</nav>
 		<router-view />
@@ -21,10 +25,23 @@
 
 <script>
 export default {
-
+	data() {
+		return {
+			name: ''
+		}
+	},
+	methods: {
+		handleClick() {
+			this.$router.push({
+				name: 'contactPerson',
+				params: {
+					id: this.name
+				}
+			});
+		}
+	}
 };
 </script>
-
 <style>
 nav {
 	height: 200px;

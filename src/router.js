@@ -16,9 +16,20 @@ const routes = [
 	},
 	{
 		path: '/contact',
-		name: 'contactPage',
+		name: 'contact',
 		component: () => import('./views/Contact.vue'),
 	},
+	{
+		path: '/contact/:id',
+		name: 'contactPerson',
+		component: () => import('./views/ContactPerson.vue'),
+        props: true,
+	},
+    {
+        path: '*',
+        name: 'notFound',
+        component: () => import('./views/NotFound.vue'),
+    }
 ];
 
 const router = new VueRouter({

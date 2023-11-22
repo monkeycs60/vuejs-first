@@ -3,6 +3,9 @@
         <h1>
             This is the contact page
         </h1>
+        <h2>
+            hello mister <span v-if="id">{{ id }} + sam</span>
+        </h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quibusdam cum quas maiores ab, perferendis neque
             eos a soluta natus.
@@ -15,9 +18,12 @@
 <script>
 export default {
     name: "contactPage",
-    
+    props: {
+        id: {
+            type: String,
+            required: false,
+        },
+    },
 }
 </script>
-<style>
-    
-</style>
+<style></style>
