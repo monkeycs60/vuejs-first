@@ -11,4 +11,6 @@ export default {
     name: "NotFoundPage",
 }
 </script>
-<style ></style>
+<style>
+
+</style>
