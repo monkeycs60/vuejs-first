@@ -3,9 +3,12 @@
 		<nav>
 			<ul>
 				<li>
-					<router-link :to="{
-						name: 'home'
-					}">Home</router-link>
+					<router-link
+						:to="{
+							name: 'home',
+						}"
+						>Home</router-link
+					>
 				</li>
 				<li>
 					<router-link :to="{ name: 'details' }">Details</router-link>
@@ -14,7 +17,10 @@
 					<router-link to="/contact">Contact</router-link>
 				</li>
 				<li>
-					<input v-model="name" type="text" placeholder="nom d'utilisateur" />
+					<input
+						v-model="name"
+						type="text"
+						placeholder="nom d'utilisateur" />
 					<button @click="handleClick">Go to contact</button>
 				</li>
 			</ul>
@@ -27,19 +33,19 @@
 export default {
 	data() {
 		return {
-			name: ''
-		}
+			name: '',
+		};
 	},
 	methods: {
 		handleClick() {
 			this.$router.push({
 				name: 'contactPerson',
 				params: {
-					id: this.name
-				}
+					id: this.name,
+				},
 			});
-		}
-	}
+		},
+	},
 };
 </script>
 <style>
