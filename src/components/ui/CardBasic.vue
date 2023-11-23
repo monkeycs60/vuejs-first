@@ -10,7 +10,7 @@
 		>
 		<slot name="description"></slot>
 		<p>I love it</p>
-		<button @click="buyNow">Buy it Now</button>
+		<button @click="emitIncrementEvent">Buy it Now</button>
 	</div>
 </template>
 
@@ -18,8 +18,8 @@
 export default {
 	name: 'CardBasic',
 	methods: {
-		buyNow() {
-			this.$emit('buy');
+		emitIncrementEvent() {
+			this.$emit('increment');
 		},
 	},
 };

@@ -15,6 +15,7 @@
 		<h2>
 			<router-link :to="{ name: 'details' }">Details</router-link>
 		</h2>
+		<fetch-datas></fetch-datas>
 	</div>
 </template>
 <script>
@@ -26,12 +27,15 @@ export default {
 			required: false,
 		},
 	},
+	components: {
+		FetchDatas: () => import('../components/FetchDatas.vue'),
+	},
 };
 </script>
 <style>
 .button-inside {
 	color: blue;
 	font-size: 32px;
-    background: yellow;
+	background: yellow;
 }
 </style>

@@ -6,7 +6,7 @@
 			>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
 			quibusdam cum quas maiores ab, perferendis neque eos a soluta natus.</p
 		>
-		<card-basic>
+		<card-basic @increment="incrementCounter">
 			<template #model>Model X</template>
 			<template #description>Some description here.</template>
 		</card-basic>
@@ -21,12 +21,17 @@ export default {
 			counter: 0,
 		};
 	},
-	methods: {},
+	methods: {
+		incrementCounter() {
+			this.counter++;
+		},
+	},
 };
 </script>
 <style>
 span {
 	color: red;
-	background-color: green;
+	background-color: whitesmoke;
+    font-size: 30px;
 }
 </style>
